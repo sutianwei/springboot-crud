@@ -19,7 +19,7 @@
         #{name},#{password},#{role}
         );
     </insert>
-    <delete id="deleteUser"  parameterType="com.su.crud.pojo.User">
+    <delete id="deleteUser"  parameterType="String">
     delete from user
     where id=#{id};
 
