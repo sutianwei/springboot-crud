@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
 
 
-    @Autowired(required = false)
+    @Autowired
     UserService userService;
 
     @RequestMapping("/login")
@@ -25,7 +25,7 @@ public class LoginController {
     public String login(String name, String password) {
         User user = userService.loginIn(name, password);
 
-        if (user != null) {
+        if (user!=null) {
             return "success";
         } else {
             return "error";

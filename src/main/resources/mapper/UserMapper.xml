@@ -4,10 +4,9 @@
 
 
     <select id="getInfo" parameterType="String" resultType="com.su.crud.pojo.User">
-  SELECT  * FRFOM USER
-   WHERE  name={#name}
-    and  password={#password}
-
+        SELECT * FROM user
+        WHERE name = #{name}
+        AND password = #{password};
     </select>
     <select id="selectUserById" parameterType="String" resultType="com.su.crud.pojo.User">
        SELECT * FROM user
@@ -20,20 +19,19 @@
         #{name},#{password},#{role}
         );
     </insert>
-    <delete id="deleteUser" parameterType="com.su.crud.pojo.User">
+    <delete id="deleteUser"  parameterType="com.su.crud.pojo.User">
     delete from user
     where id=#{id};
 
 </delete>
 
     <update id="updateUser" parameterType="com.su.crud.pojo.User">
-
         update  user  set
         password=#{password},name=#{name},role=#{role}
         where  id=#{id};
     </update>
 
-    <select id="getAllUser" parameterType="com.su.crud.pojo.User">
+    <select id="getAllUser" resultType="com.su.crud.pojo.User">
         select * from user ;
 
     </select>

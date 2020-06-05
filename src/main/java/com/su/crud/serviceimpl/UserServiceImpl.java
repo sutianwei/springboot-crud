@@ -9,11 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-
-
+@Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired(required = true)
+    @Autowired
     UserMapper userMapper;
 
     @Override
@@ -39,7 +38,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int modifyfUser(User user) {
+    public int modifyUser(User user) {
         int mFlag = userMapper.updateUser(user);
         return mFlag;
     }

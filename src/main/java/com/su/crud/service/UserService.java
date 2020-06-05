@@ -26,7 +26,7 @@ public interface UserService {
     /*
      * 修改用户
      * */
-    int modifyfUser(User user);
+    int modifyUser(User user);
 
 
     List<User> queryAllUser();
