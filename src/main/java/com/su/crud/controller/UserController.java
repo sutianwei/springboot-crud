@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.HashMap;
@@ -64,6 +63,9 @@ public class UserController {
         }
     }
 
+    /*
+    * 显示用户
+    * */
     @RequestMapping("/user+{id}")
     public String queryUser(@PathVariable("id") String id, ModelMap modelMap) {
         User user = userService.queryUserById(id);
@@ -71,6 +73,9 @@ public class UserController {
         return "userInfo";
     }
 
+    /*
+     * 修改用户
+     * */
     @RequestMapping("/modifyUser")
     public Map modifyUser(User user) {
         int flag = userService.modifyUser(user);
