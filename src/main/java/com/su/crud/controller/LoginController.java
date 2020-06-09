@@ -20,12 +20,14 @@ public class LoginController {
         return "login";
     }
 
-
+    /*
+     * 登录
+     * */
     @PostMapping("/loginIn")
     public String login(String name, String password) {
         User user = userService.loginIn(name, password);
 
-        if (user!=null) {
+        if (user != null) {
             return "success";
         } else {
             return "error";
