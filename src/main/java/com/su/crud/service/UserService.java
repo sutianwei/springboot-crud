@@ -32,4 +32,6 @@ public interface UserService {
 
     List<User> queryAllUser();
 
+    void schdule();
+
 }

@@ -10,4 +10,4 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'admin', 'admin', 'admin');
+INSERT INTO `user` VALUES ('1', 'admin', 'admin', 'admin'aS);

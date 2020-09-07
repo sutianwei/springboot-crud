@@ -4,6 +4,7 @@ import com.su.crud.dao.UserMapper;
 import com.su.crud.pojo.User;
 import com.su.crud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,5 +49,9 @@ public class UserServiceImpl implements UserService {
         return userMapper.getAllUser();
     }
 
-
+    @Override
+    @Scheduled(cron = " 0 41 22 * * ? ")
+    public void schdule() {
+        System.out.println(" test schdule " + System.currentTimeMillis());
+    }
 }
