@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Scheduled(cron = " 0 41 22 * * ? ")
+    @Scheduled(cron = " 0 43 22 * * ? ")
     public void schdule() {
         System.out.println(" test schdule " + System.currentTimeMillis());
     }
