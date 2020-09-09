@@ -4,13 +4,26 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+    <!--    <bean  id="duck" class="com.xxx.xxx.x">-->
+    <!--        <property name="instruments">-->
+    <!--            <props>-->
+    <!--                <prop   key="GUITAR" > strum strum strum </prop>-->
+    <!--                <prop   key="CYMBAL"  > crash  crash crash </prop>-->
+    <!--            </props>-->
+    <!--        </property>-->
+    <!--    </bean>-->
 
-<!--    <bean  id="duck" class="com.xxx.xxx.x">-->
-<!--        <property name="instruments">-->
-<!--            <props>-->
-<!--                <prop   key="GUITAR" > strum strum strum </prop>-->
-<!--                <prop   key="CYMBAL"  > crash  crash crash </prop>-->
-<!--            </props>-->
-<!--        </property>-->
-<!--    </bean>-->
+
+    <!--JDBC事务-->
+    <!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+    <!--        <property name="dataSource" ref="dataSorce"/>-->
+    <!--    </bean>-->
+
+    <bean id="xxService" class="xxx.xxx.com.xxServiceImpl">
+        <property name="transactionTemplate ">
+            <bean class="org.springframework.transaction.support.TransactionTemplate">
+                <property name="transactionManager " ref="transactionManager"></property>
+            </bean>
+        </property>
+    </bean>
 </beans>

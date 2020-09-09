@@ -6,6 +6,9 @@ import com.su.crud.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import java.util.List;
 
@@ -15,6 +18,27 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserMapper userMapper;
+
+    @Autowired
+    private TransactionTemplate transactionTemplate;
+
+
+//    public void tst() {
+//        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+//            @Override
+//            protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
+//                try {
+//                    //dothings
+//
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                } finally {
+//                    transactionStatus.setRollbackOnly();
+//                }
+//            }
+//        });
+//    }
+
 
     @Override
     public User loginIn(String name, String password) {
@@ -28,6 +52,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int addUser(User user) {
+
+
         int aFlag = userMapper.insertUser(user);
         return aFlag;
     }
